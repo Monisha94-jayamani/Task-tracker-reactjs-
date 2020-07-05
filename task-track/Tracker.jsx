@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const Tracker = ({ days, createTask, toggleTask, Deletetask, Remove }) => (
+const Tracker = ({ days, createTask, toggleTask, Deletetask, remove }) => (
   <div className="main-container">
     {days.map((day, index) => (
       <Card
@@ -10,7 +10,7 @@ const Tracker = ({ days, createTask, toggleTask, Deletetask, Remove }) => (
         createTask={(value) => createTask(index, value)}
         toggleTask={(taskIndex) => toggleTask(index, taskIndex)}
         Deletetask={(taskIndex) => Deletetask(index, taskIndex)}
-        remove={() => Remove(index)}
+        remove={() => remove(index)}
       />
     ))}
   </div>
