@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Card = ({ day, createTask, toggleTask, Deletetask, Remove }) => {
+const Card = ({ day, createTask, toggleTask, Deletetask, remove }) => {
   const [task, setTask] = useState("");
 
   return (
@@ -35,13 +35,13 @@ const Card = ({ day, createTask, toggleTask, Deletetask, Remove }) => {
           );
         })}
       </div>
-      {day.tasks.map((task, taskIndex) => {
-        return (
-          <button key={taskIndex} onClick={() => Remove(taskIndex)}>
-            delete
-          </button>
-        );
-      })}
+      <button
+        onClick={(_) => {
+          remove();
+        }}
+      >
+        delete
+      </button>
     </div>
   );
 };
