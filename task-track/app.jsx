@@ -9,7 +9,9 @@ const App = () => {
   const [days, setDays] = useState([]);
 
   const [state, setState] = useState("VIEW");
-
+  const remove = (index) => {
+    setDays(days.filter((count, i) => index !== i));
+  };
   const createDay = (value) => {
     // value shoud be day title
 
@@ -77,9 +79,7 @@ const App = () => {
       })
     );
   };
-  const Remove = (index) => {
-    setDays(days.filter((count, i) => index !== i));
-  };
+
   return (
     <div>
       {state === "VIEW" ? (
@@ -90,7 +90,7 @@ const App = () => {
             createTask={createTask}
             toggleTask={toggleTask}
             Deletetask={Deletetask}
-            Remove={Remove}
+            remove={remove}
           />
         </React.Fragment>
       ) : (
