@@ -60,16 +60,16 @@ const App = () => {
       })
     );
   };
-  const removetask = (dayIndex, taskIndex) => {
+  const Deletetask = (dayIndex, taskIndex) => {
     setDays(
       days.map((day, index) => {
         if (index === dayIndex) {
           return {
             ...day,
             tasks: day.tasks.filter((task, index) => {
-              if (index !== taskIndex) {
-                return { ...task, completed: !task.completed };
-              } else return task;
+              if (index === taskIndex) {
+                return false;
+              } else return true;
             }),
           };
         }
@@ -77,7 +77,7 @@ const App = () => {
       })
     );
   };
-  const remove = (index) => {
+  const Remove = (index) => {
     setDays(days.filter((count, i) => index !== i));
   };
   return (
@@ -89,8 +89,8 @@ const App = () => {
             days={days}
             createTask={createTask}
             toggleTask={toggleTask}
-            remove={remove}
-            removetask={removetask}
+            Deletetask={Deletetask}
+            Remove={Remove}
           />
         </React.Fragment>
       ) : (
