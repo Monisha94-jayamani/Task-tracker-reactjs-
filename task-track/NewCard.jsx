@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+\import React, { useState } from "react";
 
 const NewCard = ({ onSave, onCancel }) => {
   const [day, setDay] = useState("");
@@ -14,4 +14,3 @@ const NewCard = ({ onSave, onCancel }) => {
 };
 
 export default NewCard;
-
